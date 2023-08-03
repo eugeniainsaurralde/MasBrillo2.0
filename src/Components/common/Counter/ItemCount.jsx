@@ -1,34 +1,4 @@
-import { useState, useEffect } from "react";
-
-const ItemCount = (props) => {
-  const [ItemStock, setItemStock] = useState(props.stock); //10
-  const [Cantidad, setCantidad] = useState(props.initial); //1
-  /* const [ItemAdd, setItemAdd]=useState(props.onAdd);//0 */
-
-  const decrementarCantidad = (valor) => {
-    if (valor > 0) {
-      setCantidad(valor);
-    }
-  };
-  const incrementarCantidad = (valor) => {
-    if (valor <= ItemStock) {
-      setCantidad(valor);
-    }
-  };
-  const agregarProductos = () => {
-    if (Cantidad <= ItemStock) {
-      props.onAdd(Cantidad);
-      setItemStock(ItemStock - Cantidad);
-      setCantidad(ItemStock - Cantidad);
-      /*  setItemAdd(ItemAdd+Cantidad) */
-      /* addItem(item, Cantidad); */
-    }
-  };
-
-  useEffect(() => {
-    setItemStock(props.stock);
-  }, [props.stock]);
-
+const ItemCount = ({ cantidad, setCantidad, agregarAlCarrito, stock }) => {
   return (
     <div className="container py-1 center">
       <div className="row">
@@ -39,14 +9,15 @@ const ItemCount = (props) => {
               className="btn btn-secondary"
               id="btnGroupAddon"
               value="-"
+              disabled={cantidad == 1}
               onClick={() => {
-                decrementarCantidad(Cantidad - 1);
+                setCantidad(cantidad - 1);
               }}
             />
             <input
               type="text"
               className="form-control"
-              value={Cantidad}
+              value={cantidad}
               onChange={() => {}}
             />
             <input
@@ -54,8 +25,9 @@ const ItemCount = (props) => {
               className="btn btn-secondary"
               id="btnGroupAddon"
               value="+"
+              disabled={cantidad == stock}
               onClick={() => {
-                incrementarCantidad(Cantidad + 1);
+                setCantidad(cantidad + 1);
               }}
             />
           </div>
@@ -65,11 +37,10 @@ const ItemCount = (props) => {
               className="btn btn-secondary"
               value="Agregar al carrito"
               onClick={() => {
-                agregarProductos();
+                agregarAlCarrito(cantidad);
               }}
             />
           </div>
-          {/* <p className="text-center">Productos seleccionados: {addItem}</p> */}
         </div>
       </div>
     </div>

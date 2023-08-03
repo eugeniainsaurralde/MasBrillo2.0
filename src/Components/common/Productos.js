@@ -13,7 +13,7 @@ export const Productos = [
     id: 2,
     nombre: "Rimel",
     descripcion: "Rimel waterproof negro volumen max",
-    marca: "natura",
+    marca: "dior",
     precio: "1500",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320676/2_xh57if.jpg",
@@ -23,7 +23,7 @@ export const Productos = [
     id: 3,
     nombre: "Lash shampoo",
     descripcion: "Shampoo para extenciones de pestañas",
-    marca: "avon",
+    marca: "Kyle",
     precio: "2500",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320676/3_qvoy5a.jpg",
@@ -43,7 +43,7 @@ export const Productos = [
     id: 5,
     nombre: "Base",
     descripcion: "Base waterproof diversos tonos",
-    marca: "dior",
+    marca: "natura",
     precio: "4500",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320676/5_kdhnqi.jpg",
@@ -53,7 +53,7 @@ export const Productos = [
     id: 6,
     nombre: "Antifaz gel",
     descripcion: "Antifaz para descanso y descongestion",
-    marca: "natuflex",
+    marca: "natura",
     precio: "3800",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320677/6_hlhmhz.jpg",
