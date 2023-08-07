@@ -22,9 +22,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     const promesa = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(Productos.find((prod) => prod.id === parseInt(id)) || []);
-      }, 2000);
+      resolve(Productos.find((prod) => prod.id === parseInt(id)) || []);
     });
 
     promesa.then((resultado) => {
@@ -33,13 +31,11 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div className="container ">
-      <ItemDetail
-        detail={detail}
-        agregarAlCarrito={agregarAlCarrito}
-        counter={counter}
-      />
-    </div>
+    <ItemDetail
+      detail={detail}
+      agregarAlCarrito={agregarAlCarrito}
+      counter={counter}
+    />
   );
 };
 

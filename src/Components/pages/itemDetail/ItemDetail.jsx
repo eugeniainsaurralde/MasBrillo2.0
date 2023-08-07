@@ -9,34 +9,42 @@ const ItemDetail = ({ detail, agregarAlCarrito, counter }) => {
   }; */
 
   return (
-    <div className="card mb-3 col-md-8">
-      <div className="row g-0">
+    <div className="container card mb-3 col-xl-6 px-0 align-items-center">
+      <div className="row align-items-center g-0">
         <div className="col-md-6">
-          {/*   <img src= {ImagesProductos(`./${detail.imagen}.jpg`)} className="img-fluid rounded-start" alt={detail.nombre}/> */}
           <img
             src={detail.imagen}
-            className="img-fluid rounded-start"
+            className="img-fluid rounded"
             alt={detail.nombre}
           />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 ">
           <div className="card-body">
-            <h2 className="card-title text-center">{detail.nombre}</h2>
-            <p className="card-text text-center">{detail.descripcion}</p>
-            <p className="card-text text-center">
+            <h2 className="card-title text-center mb-5">{detail.nombre}</h2>
+            <p className="card-text text-center mb-3">{detail.descripcion}</p>
+            <p className="card-text text-center mb-5">
               <small className="text-muted">{detail.marca}</small>
             </p>
-            <p className="card-text text-center">${detail.precio}</p>
-            {counter === 0 ? (
-              <ItemCountContainer
-                agregarAlCarrito={agregarAlCarrito}
-                stock={detail.stock}
-              />
-            ) : (
-              <Link to={"/cart"} className="btn-propio-secundario">
-                Ir al Carrito
-              </Link>
-            )}
+            <p className="card-text text-center mb-5">${detail.precio}</p>
+            <div>
+              {counter === 0 ? (
+                <ItemCountContainer
+                  agregarAlCarrito={agregarAlCarrito}
+                  stock={detail.stock}
+                />
+              ) : (
+                <div className="container">
+                  <div className="row justify-content-center">
+                    <Link
+                      to={"/cart"}
+                      className="btn-propio-secundario text-center"
+                    >
+                      Ir al Carrito
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

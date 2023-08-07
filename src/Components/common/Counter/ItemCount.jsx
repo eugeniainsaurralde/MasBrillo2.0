@@ -1,8 +1,8 @@
 const ItemCount = ({ cantidad, setCantidad, agregarAlCarrito, stock }) => {
   return (
-    <div className="container py-1 center">
-      <div className="row">
-        <div className="col-md-5">
+    <div className="container  ">
+      <div className="row justify-content-center">
+        <div className="col-lg-7">
           <div className="input-group">
             <input
               type="button"
@@ -16,7 +16,7 @@ const ItemCount = ({ cantidad, setCantidad, agregarAlCarrito, stock }) => {
             />
             <input
               type="text"
-              className="form-control"
+              className="form-control text-center"
               value={cantidad}
               onChange={() => {}}
             />
@@ -31,7 +31,7 @@ const ItemCount = ({ cantidad, setCantidad, agregarAlCarrito, stock }) => {
               }}
             />
           </div>
-          <div className="d-grid gap-2 pt-3">
+          <div className="d-grid gap-2 pt-3 ">
             <input
               type="button"
               className="btn btn-secondary"
