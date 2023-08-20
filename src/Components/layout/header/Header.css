@@ -2,10 +2,9 @@ header {
     position: sticky;
     top: 0;
     width: 100vw;
-    height: 6rem;
+    min-height: 100vh;
     background-color: #d4bdbd;
     padding: 1%;
-    margin-bottom: 2%;
     z-index: 5;
 }
 
@@ -27,41 +26,12 @@ header {
 }
 
 .header__items li a {
-    width: min-content;
     padding: 1rem;
     outline: none;
     text-decoration: none;
     color: white;
 }
 
-li {
-    display: inline-block;
-    position: relative;
-}
-
-ul ul {
-    position: absolute;
-    display: none;
-    background-color: #d4bdbd;
-    height: 180px;
-    width: 100%;
-    border-radius: 10%;
-    opacity: 0.9;
-
-}
-
-ul ul li {
-    display: block;
-
-}
-
-li li {
-    opacity: 1;
-}
-
-ul li:hover ul {
-    display: block;
-}
 
 .container__img {
     width: 5%;

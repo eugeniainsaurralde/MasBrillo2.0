@@ -4,11 +4,10 @@ import { Productos } from "../../common/Productos";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
     const promesa = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(Productos);
-      }, 2000);
+      resolve(Productos);
     });
 
     promesa.then((resultado) => {

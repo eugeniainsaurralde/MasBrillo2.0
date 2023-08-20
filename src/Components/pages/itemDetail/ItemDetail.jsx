@@ -12,7 +12,6 @@ const ItemDetail = ({ detail, agregarAlCarrito, counter }) => {
     <div className="card mb-3 col-md-8">
       <div className="row g-0">
         <div className="col-md-6">
-          {/*   <img src= {ImagesProductos(`./${detail.imagen}.jpg`)} className="img-fluid rounded-start" alt={detail.nombre}/> */}
           <img
             src={detail.imagen}
             className="img-fluid rounded-start"
@@ -24,7 +23,7 @@ const ItemDetail = ({ detail, agregarAlCarrito, counter }) => {
             <h2 className="card-title text-center">{detail.nombre}</h2>
             <p className="card-text text-center">{detail.descripcion}</p>
             <p className="card-text text-center">
-              <small className="text-muted">{detail.marca}</small>
+              <small className="text-muted">{detail.brand}</small>
             </p>
             <p className="card-text text-center">${detail.precio}</p>
             {counter === 0 ? (

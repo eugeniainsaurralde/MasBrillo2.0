@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div className="container ">
+    <div className="container " style={{ display: "flex" }}>
       <ItemDetail
         detail={detail}
         agregarAlCarrito={agregarAlCarrito}
