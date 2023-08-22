@@ -1,62 +1,36 @@
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import { Outlet } from "react-router-dom";
+import CartWidget from "../../common/cartWidget/CartWidget";
 
 const Header = () => {
   return (
     <header>
       <nav className="header__nav">
-        <div className="container__img">
-          <a href="">
-            <img
-              src="https://res.cloudinary.com/eugedev/image/upload/v1690320676/logoMasBrillo_crszeg.jpg"
-              alt="logo"
-            />
-          </a>
-        </div>
+        <NavLink to="/" className="container__img">
+          <img
+            src="https://res.cloudinary.com/eugedev/image/upload/v1690320676/logoMasBrillo_crszeg.jpg"
+            alt="logo"
+          />
+        </NavLink>
         <div>
           <ul className="header__items">
             <li>
-              <NavLink to="/servicios">Servicios Disponibles</NavLink>
-              <ul>
-                <li>
-                  <NavLink to="/servicios/pestañas">Pestañas</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/servicios/cejas">Cejas</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/servicios/unas">Uñas</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/servicios/depilacion">Depilacion</NavLink>
-                </li>
-              </ul>
+              <NavLink to="">Dior</NavLink>
             </li>
             <li>
-              <NavLink to="/cuidados">Cuidados</NavLink>
+              <NavLink to={""}>Kyle</NavLink>
             </li>
             <li>
-              <NavLink to={"/carrito"}>Carrito</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contactame">Contactame</NavLink>
-            </li>
-            <li>
-              <NavLink to="/aboutUs">About Us</NavLink>
+              <NavLink to="">Natura</NavLink>
             </li>
           </ul>
         </div>
         <div className="container__img">
-          <a href="">
-            <img
-              src={
-                "https://res.cloudinary.com/eugedev/image/upload/v1690320676/carritoIcono_m1wir6.jpg"
-              }
-              alt="carrito"
-            />
-          </a>
+          <CartWidget />
         </div>
       </nav>
+      <Outlet />
     </header>
   );
 };

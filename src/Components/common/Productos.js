@@ -3,7 +3,7 @@ export const Productos = [
     id: 1,
     nombre: "Delineador",
     descripcion: "Delineador waterproof negro",
-    marca: "dior",
+    brand: "dior",
     precio: "3000",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320675/1_ia0kah.jpg",
@@ -13,7 +13,7 @@ export const Productos = [
     id: 2,
     nombre: "Rimel",
     descripcion: "Rimel waterproof negro volumen max",
-    marca: "dior",
+    brand: "dior",
     precio: "1500",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320676/2_xh57if.jpg",
@@ -23,7 +23,7 @@ export const Productos = [
     id: 3,
     nombre: "Lash shampoo",
     descripcion: "Shampoo para extenciones de pestañas",
-    marca: "Kyle",
+    brand: "Kyle",
     precio: "2500",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320676/3_qvoy5a.jpg",
@@ -33,7 +33,7 @@ export const Productos = [
     id: 4,
     nombre: "Labial",
     descripcion: "Labial rojo 24hs asegurado",
-    marca: "kyle",
+    brand: "kyle",
     precio: "3200",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320677/4_v4tzg4.jpg",
@@ -43,7 +43,7 @@ export const Productos = [
     id: 5,
     nombre: "Base",
     descripcion: "Base waterproof diversos tonos",
-    marca: "natura",
+    brand: "natura",
     precio: "4500",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320676/5_kdhnqi.jpg",
@@ -53,7 +53,7 @@ export const Productos = [
     id: 6,
     nombre: "Antifaz gel",
     descripcion: "Antifaz para descanso y descongestion",
-    marca: "natura",
+    brand: "natura",
     precio: "3800",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320677/6_hlhmhz.jpg",

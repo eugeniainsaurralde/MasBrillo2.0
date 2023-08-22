@@ -4,6 +4,7 @@ import { Productos } from "../../common/Productos";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
     setItems(Productos);
   }, []);
