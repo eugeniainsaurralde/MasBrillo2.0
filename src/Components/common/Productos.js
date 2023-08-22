@@ -23,7 +23,7 @@ export const Productos = [
     id: 3,
     nombre: "Lash shampoo",
     descripcion: "Shampoo para extenciones de pestañas",
-    brand: "Kyle",
+    brand: "kyle",
     precio: "2500",
     imagen:
       "https://res.cloudinary.com/eugedev/image/upload/v1690320676/3_qvoy5a.jpg",

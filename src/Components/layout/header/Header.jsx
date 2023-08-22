@@ -16,13 +16,13 @@ const Header = () => {
         <div>
           <ul className="header__items">
             <li>
-              <NavLink to="">Dior</NavLink>
+              <NavLink to="/brand/dior">Dior</NavLink>
             </li>
             <li>
-              <NavLink to={""}>Kyle</NavLink>
+              <NavLink to="/brand/kyle">Kyle</NavLink>
             </li>
             <li>
-              <NavLink to="">Natura</NavLink>
+              <NavLink to="/brand/natura">Natura</NavLink>
             </li>
           </ul>
         </div>

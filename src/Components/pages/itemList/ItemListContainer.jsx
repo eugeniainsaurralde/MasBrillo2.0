@@ -1,13 +1,26 @@
 import { useEffect, useState } from "react";
 import Item from "./Item";
 import { Productos } from "../../common/Productos";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const { brandName } = useParams();
 
   useEffect(() => {
-    setItems(Productos);
-  }, []);
+    let categoryBrand = Productos.filter(
+      (element) => element.brand === brandName
+    );
+
+    const promise = new Promise((resolve, reject) => {
+      resolve(brandName ? categoryBrand : Productos);
+    });
+
+    promise
+      .then((resultado) => setItems(resultado))
+      .catch((error) => console.log(error));
+    /*     setItems(Productos); */
+  }, [brandName]);
 
   return (
     <div className="container-xxl ">

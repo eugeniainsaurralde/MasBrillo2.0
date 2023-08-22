@@ -3,6 +3,7 @@ import ItemListContainer from "./Components/pages/itemList/ItemListContainer";
 import ItemDetailContainer from "./Components/pages/itemDetail/ItemDetailContainer";
 import Cart from "./Components/pages/cart/Cart";
 import Header from "./Components/layout/header/Header";
+import CheckoutContainer from "./Components/pages/checkout/CheckoutContainer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/brand/:brandName" element={<ItemListContainer />} />
           <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<CheckoutContainer />} />
         </Route>
         <Route path="*" element={<h1>404 - Not found</h1>} />
       </Routes>
