@@ -1,24 +1,17 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
 import { Productos } from "../../common/Productos";
-import { CartContext } from "../../common/Context";
+import { CartContext } from "../../context/CartContext";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
-  const { id } = useParams();
+  const { id } = useParams(); //recordar que el id siempre llega como string
   const [counter, setCounter] = useState(0);
-  //Por revisar
-  const addItem = useContext(CartContext);
 
-  const agregarAlCarrito = (cantidad) => {
-    let data = {
-      ...detail,
-      quantity: cantidad,
-    };
-    setCounter(cantidad);
-    addItem(detail, cantidad);
-  };
+  const { addItem, getQuantityById } = useContext(CartContext);
+
+  const quantityInCart = getQuantityById(id);
 
   useEffect(() => {
     const promesa = new Promise((resolve) => {
@@ -30,11 +23,21 @@ const ItemDetailContainer = () => {
     });
   }, [id]);
 
+  const agregarAlCarrito = (cantidad) => {
+    let data = {
+      ...detail,
+      quantity: cantidad,
+    };
+    setCounter(cantidad);
+    addItem(data);
+  };
+
   return (
     <ItemDetail
       detail={detail}
       agregarAlCarrito={agregarAlCarrito}
       counter={counter}
+      quantityInCart={quantityInCart}
     />
   );
 };

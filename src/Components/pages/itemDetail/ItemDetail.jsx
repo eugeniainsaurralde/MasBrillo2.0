@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
-import "../itemList/Item.css";
+import "../../common/Style.css";
 import ItemCountContainer from "../../common/Counter/ItemCountContainer";
 
-const ItemDetail = ({ detail, agregarAlCarrito, counter }) => {
+const ItemDetail = ({ detail, agregarAlCarrito, counter, quantityInCart }) => {
   /*const addItem = useContext(CartContext);
     const onAdd = (counter) => {
     addItem(detail, counter);
   }; */
 
   return (
-    <div className="container card mb-3 col-xl-6 px-0 align-items-center">
+    <div
+      key={detail.id}
+      className="container card mb-3 col-xl-6 px-0 align-items-center"
+    >
       <div className="row align-items-center g-0">
         <div className="col-md-6">
           <img
@@ -31,6 +34,7 @@ const ItemDetail = ({ detail, agregarAlCarrito, counter }) => {
                 <ItemCountContainer
                   agregarAlCarrito={agregarAlCarrito}
                   stock={detail.stock}
+                  quantityInCart={quantityInCart}
                 />
               ) : (
                 <div className="container">

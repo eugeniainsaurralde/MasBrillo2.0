@@ -1,4 +1,4 @@
-import "./Item.css";
+import "../../common/Style.css";
 import { Link } from "react-router-dom";
 
 const Item = ({ id, nombre, imagen }) => {

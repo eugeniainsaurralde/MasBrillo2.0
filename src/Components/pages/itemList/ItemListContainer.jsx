@@ -1,14 +1,25 @@
 import { useEffect, useState } from "react";
-import Item from "./Item";
-import { Productos } from "../../common/Productos";
 import { useParams } from "react-router-dom";
+import Item from "./Item";
+import { db } from "../../../firebaseConfig";
+import { getDocs, collection } from "firebase/firestore ";
+
+import { Productos } from "../../common/Productos";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { brandName } = useParams();
 
   useEffect(() => {
-    let categoryBrand = Productos.filter(
+    let ref = collection(db, "Productos");
+    getDocs(ref).then((resolve) => {
+      console.log(resolve);
+      /*    let arrayProductos = resolve.docs.map(products => {
+        return { ...product.data(), id: product.id };
+      });
+      console.log(arrayProductos); */
+    });
+    /* let categoryBrand = Productos.filter(
       (element) => element.brand === brandName
     );
 
@@ -18,9 +29,12 @@ const ItemListContainer = () => {
 
     promise
       .then((resultado) => setItems(resultado))
-      .catch((error) => console.log(error));
-    /*     setItems(Productos); */
+      .catch((error) => console.log(error)); */
   }, [brandName]);
+
+  if (items.length === 0) {
+    return <h1>cargando..</h1>;
+  }
 
   return (
     <div className="container-xxl ">
