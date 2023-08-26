@@ -2,34 +2,30 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Item from "./Item";
 import { db } from "../../../firebaseConfig";
-import { getDocs, collection } from "firebase/firestore ";
-
-import { Productos } from "../../common/Productos";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { brandName } = useParams();
 
   useEffect(() => {
-    let ref = collection(db, "Productos");
-    getDocs(ref).then((resolve) => {
-      console.log(resolve);
-      /*    let arrayProductos = resolve.docs.map(products => {
+    let consult;
+
+    let productsCollection = collection(db, "Productos");
+
+    if (!brandName) {
+      consult = productsCollection;
+    } else {
+      consult = query(productsCollection, where("brand", "==", brandName));
+    }
+
+    getDocs(consult).then((resolve) => {
+      let arrayProductos = resolve.docs.map((product) => {
         return { ...product.data(), id: product.id };
       });
-      console.log(arrayProductos); */
+      console.log(arrayProductos);
+      setItems(arrayProductos);
     });
-    /* let categoryBrand = Productos.filter(
-      (element) => element.brand === brandName
-    );
-
-    const promise = new Promise((resolve, reject) => {
-      resolve(brandName ? categoryBrand : Productos);
-    });
-
-    promise
-      .then((resultado) => setItems(resultado))
-      .catch((error) => console.log(error)); */
   }, [brandName]);
 
   if (items.length === 0) {
