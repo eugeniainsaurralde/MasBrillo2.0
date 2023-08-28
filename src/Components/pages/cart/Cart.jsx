@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Cart = ({ cart, clear, deleteById, getTotalQuantity, getTotalPrice }) => {
   let quantity = getTotalQuantity();
   let price = getTotalPrice();
@@ -13,7 +15,14 @@ const Cart = ({ cart, clear, deleteById, getTotalQuantity, getTotalPrice }) => {
           </div>
         );
       })}
-      {cart.length > 0 && <button onClick={clear}>Limpiar carrito</button>}
+      {cart.length > 0 && (
+        <>
+          <button onClick={clear}>Limpiar carrito</button>
+          <Link to="/checkout">
+            <button>Finalizar compra</button>
+          </Link>
+        </>
+      )}
 
       <h1>cantidad: {quantity}</h1>
       <h1>precio: {price}</h1>

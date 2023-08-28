@@ -23,7 +23,6 @@ const ItemListContainer = () => {
       let arrayProductos = resolve.docs.map((product) => {
         return { ...product.data(), id: product.id };
       });
-      console.log(arrayProductos);
       setItems(arrayProductos);
     });
   }, [brandName]);
