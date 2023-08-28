@@ -1,7 +1,13 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../../firebaseConfig";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  serverTimestamp,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 import "../../common/Style.css";
 import Checkout from "./Checkout";
 
@@ -20,8 +26,19 @@ const CheckoutContainer = () => {
       date: serverTimestamp(),
     };
 
+    //crear una orden de compra
     let orderCollection = collection(db, "Orders");
     addDoc(orderCollection, order).then((resolve) => setOrderId(resolve.id));
+
+    //Modificar stock de TODOS los productos
+    //OPCION 1
+    /*  let refDoc= doc(db, "Productos", id)
+    updateDoc(refDoc, {stock: } ) */
+    //OPCION 2
+    cart.forEach((element) => {
+      let refDoc = doc(db, "Productos", element.id);
+      updateDoc(refDoc, { stock: element.stock - element.quantity });
+    });
   };
 
   const handleChange = (evento) => {
