@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 import { Outlet } from "react-router-dom";
 import CartWidget from "../../common/cartWidget/CartWidget";
+import UserButton from "../../common/userButton/UserButton";
 
 const Header = () => {
   return (
@@ -26,8 +27,13 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="container__img">
-          <CartWidget />
+        <div className="d-flex">
+          <div className="m-2">
+            <UserButton />
+          </div>
+          <div className="m-2">
+            <CartWidget />
+          </div>
         </div>
       </nav>
       <Outlet />
