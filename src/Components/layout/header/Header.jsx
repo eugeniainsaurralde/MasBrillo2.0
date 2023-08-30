@@ -5,6 +5,7 @@ import CartWidget from "../../common/cartWidget/CartWidget";
 import UserButton from "../../common/userButton/UserButton";
 
 const Header = () => {
+  let userRol = "admin";
   return (
     <header>
       <nav className="header__nav">
@@ -29,11 +30,13 @@ const Header = () => {
         </div>
         <div className="d-flex">
           <div className="m-2">
-            <UserButton />
-          </div>
-          <div className="m-2">
             <CartWidget />
           </div>
+          {userRol === "admin" && (
+            <div className="m-2">
+              <UserButton />
+            </div>
+          )}
         </div>
       </nav>
       <Outlet />

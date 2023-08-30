@@ -12,6 +12,7 @@ const DashBoard = () => {
 
   return (
     <div>
+      <h1>Proxima interfaz para el administrador</h1>
       <button onClick={rellenar}>Rellenar base de datos</button>
     </div>
   );
