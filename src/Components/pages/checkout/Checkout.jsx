@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Checkout = ({ handleSubmit, handleChange, orderId }) => {
   return (
     <>
@@ -67,12 +69,14 @@ const Checkout = ({ handleSubmit, handleChange, orderId }) => {
             >
               Enviar
             </button>
-            <button
-              type="button"
-              className="btn btn-propio-secundario text-nowrap "
-            >
-              Cancelar
-            </button>
+            <Link to={"/"} style={{ textDecoration: "none" }}>
+              <button
+                type="button"
+                className="btn btn-propio-secundario text-nowrap "
+              >
+                Cancelar
+              </button>
+            </Link>
           </div>
         </form>
       )}

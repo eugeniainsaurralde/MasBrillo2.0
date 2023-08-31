@@ -1,8 +1,18 @@
-# React + Vite
+# Mas Brillo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## E-commerce
 
-Currently, two official plugins are available:
+Este es un proyecto de prueba con el cual aprendí React JS. Es una tienda online de cosméticos y productos de perfumería.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías
+
+- React
+- Firebase
+- Boostrap
+- React Icons
+
+## ¿Cómo ejecutar el proyecto?
+
+```
+git clone https://github.com/eugeniainsaurralde/MasBrillo2.0.git
+```
