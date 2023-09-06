@@ -7,7 +7,7 @@ const Cart = ({ cart, clear, deleteById, getTotalQuantity, getTotalPrice }) => {
   return (
     <>
       {cart.length > 0 ? (
-        <>
+        <div className="card m-3 p-3">
           <table className="table">
             <thead>
               <tr>
@@ -21,8 +21,15 @@ const Cart = ({ cart, clear, deleteById, getTotalQuantity, getTotalPrice }) => {
             <tbody>
               {cart.map((elemento) => {
                 return (
-                  <tr key={elemento.id}>
-                    <th scope="row">Foto</th>
+                  <tr key={elemento.id} style={{ height: "5px" }}>
+                    <td scope="row" className="object-fit-scale">
+                      {" "}
+                      <img
+                        src={elemento.imagen}
+                        className="img-fluid rounded img-thumbnail object-fit-scale"
+                        alt={elemento.nombre}
+                      />
+                    </td>
                     <td>
                       <h1>{elemento.nombre}</h1>
                     </td>
@@ -34,7 +41,6 @@ const Cart = ({ cart, clear, deleteById, getTotalQuantity, getTotalPrice }) => {
                       <h1>{elemento.precio}</h1>
                     </td>
                     <td>
-                      {" "}
                       <button onClick={() => deleteById(elemento.id)}>
                         Eliminar
                       </button>
@@ -61,7 +67,7 @@ const Cart = ({ cart, clear, deleteById, getTotalQuantity, getTotalPrice }) => {
           <Link to="/checkout">
             <button>Finalizar compra</button>
           </Link>
-        </>
+        </div>
       ) : (
         <h1>El carrito esta vacio</h1>
       )}
